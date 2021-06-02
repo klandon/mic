@@ -1,0 +1,24 @@
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+gazelle(name = "gazelle")
+# gazelle:proto disable_global
+# gazelle:prefix mic
+# gazelle:go_naming_convention import
+
+# gazelle:exclude  change_request
+# gazelle:exclude  deprecated
+# gazelle:exclude  docker
+# gazelle:exclude  docs
+# gazelle:exclude  helm
+# gazelle:exclude  insource
+# gazelle:exclude  jenkins
+# gazelle:exclude  scripts
+# gazelle:exclude  service_catalog
+# gazelle:exclude  ssm_update
+# gazelle:exclude  terraform
+
+exports_files([
+    "WORKSPACE",
+    "go.mod",
+    "go.sum",
+])
